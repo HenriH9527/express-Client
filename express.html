@@ -1,5 +1,5 @@
 
-Vue 提供一种方式来声明“这两个元素是完全独立的---不要复用它们”。只需要添加一个具有唯一值的key属性即可
+一，Vue 提供一种方式来声明“这两个元素是完全独立的---不要复用它们”。只需要添加一个具有唯一值的key属性即可
 
 <router-view :key="key"></router-view>
 
@@ -8,3 +8,10 @@ computed: {
     return this.$route.name !== undefined? this.$route.name + new Date() : this.$route + new Date()
   }
 }
+
+二，Vue 过度效果
+1. 我们需要给每个页面定义层级，在切换路由时判断用户时进入那一层页面，如果用户进入更高层级，那么做前进动画，反之则进入后退动画
+2，监控路由跳转，判断页面的切换层级关系
+3，编写动画
+
+blog.csdn.net/qq_33236453/article/details/79110485
