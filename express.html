@@ -1,1 +1,10 @@
 
+Vue 提供一种方式来声明“这两个元素是完全独立的---不要复用它们”。只需要添加一个具有唯一值的key属性即可
+
+<router-view :key="key"></router-view>
+
+computed: {
+  key() {
+    return this.$route.name !== undefined? this.$route.name + new Date() : this.$route + new Date()
+  }
+}
